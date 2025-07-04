@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "5f4f96c8-22ce-4834-b91c-9e62dc36bef5",
+		"name": "Math Arena Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28347870"
+	},
+	"item": [
+		{
+			"name": "authService",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Ibrahim3\",\r\n    \"username\" : \"IbrahimSalem3\",\r\n    \"password\" : \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"IbrahimSalem4\",\r\n    \"password\" : \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orchestrator",
+			"item": [
+				{
+					"name": "Start Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjU4NDg2NzFkMjEyOGQzYzU5ZDY4MSIsIm5hbWUiOiJJYnJhaGltMSIsImlhdCI6MTc1MTQ4OTY2N30.9kiGIrzARYEEnk0kt9fPKRhrnVp04xEL4gF8EzjhLu0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Ibrahim1\",\r\n    \"difficulty\": 1\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/game/start",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"game",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjUwMmI2OTZiNGIxZjU4OGI0YzhjYyIsIm5hbWUiOiJJYnJhaGltIFNhbGVtIiwiaWF0IjoxNzUxNDY0NDc1fQ.kesp044QX9fEWvdapc4dq_u4k0dFmNENHjcK3OjWE_w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answer\": -4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/game/6865b20dcded3c20a1ffb5f9/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"game",
+								"6865b20dcded3c20a1ffb5f9",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Join Game",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjU4NDdlNzFkMjEyOGQzYzU5ZDY3ZSIsIm5hbWUiOiJJYnJhaGltNCIsImlhdCI6MTc1MTQ4OTc2OX0.YB0J2kyJa1jGsMaQbDQEXWBGrKpwIWW01ZQuyYIYz8I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"IbrahimSalem4\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/game/6865abc6a4025993c260aab2/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"game",
+								"6865abc6a4025993c260aab2",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "End Game",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjU0OTc1NTEyOWRkZWI1MzFiMjI2ZSIsIm5hbWUiOiJJYnJhaGltIFNhbGVtIDIiLCJpYXQiOjE3NTE0Njg0MTJ9.NiBkt6PtZQawTIhRL1f0Jrfx-FL00DyVLyxI6-HHB7E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4002/game/6865b20dcded3c20a1ffb5ed/end",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"game",
+								"6865b20dcded3c20a1ffb5ed",
+								"end"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Result",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjUwMmI2OTZiNGIxZjU4OGI0YzhjYyIsIm5hbWUiOiJJYnJhaGltIFNhbGVtIiwiaWF0IjoxNzUxNDY2OTgwfQ.deo2mVKdJsD6X5_cNlmZdO3hZpb7ITRAf51qaCKwsHM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4002/result/me/6865ac21a4025993c260ab61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"result",
+								"me",
+								"6865ac21a4025993c260ab61"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Result All User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjUwMmI2OTZiNGIxZjU4OGI0YzhjYyIsIm5hbWUiOiJJYnJhaGltIFNhbGVtIiwiaWF0IjoxNzUxNDY2OTgwfQ.deo2mVKdJsD6X5_cNlmZdO3hZpb7ITRAf51qaCKwsHM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4002/player/all/6865abc6a4025993c260aab2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"player",
+								"all",
+								"6865abc6a4025993c260aab2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

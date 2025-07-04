@@ -1,0 +1,33 @@
+{
+  "name": "math-arena-backend",
+  "version": "1.0.0",
+  "description": "Multiplayer Math Arena Microservices Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"nodemon ./authService/server.js\" \"nodemon ./gameService/server.js\" \"nodemon ./orchestrator/server.js\" \"nodemon ./playersService/server.js\"",
+    "test": "npm --prefix authService test && npm --prefix gameService test && npm --prefix playersService test && npm --prefix orchestrator test"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.5.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "detectOpenHandles": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
